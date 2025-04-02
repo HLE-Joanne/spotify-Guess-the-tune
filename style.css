@@ -1,0 +1,791 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600&display=swap');
+
+/* 預設隱藏所有頁面 */
+.page {
+    display: none;
+    height: 100vh;
+}
+
+/* 只顯示當前頁面 */
+.page.active {
+    display: block;
+    height: 100vh;
+}
+
+/* 去除 html 和 body 的邊距 */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* 確保不會有額外滾動條 */
+}
+
+
+/* 預設所有頁面的樣式 */
+body {
+    font-family: 'Instrument Sans', sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+    /* Page 1 的排版 */
+    .inner-container1 {
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding-right: 15%;
+        box-sizing: border-box; /* 確保 padding 不影響總寬度 */
+        display: flex;
+        flex-direction: row;
+    }
+
+    .index-logo {
+        flex: 7;
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .index-logo img{
+        width: clamp(200px, 70%, 600px);
+    }
+
+
+    .login {
+        flex: 3;
+    }
+
+    .index-logo, .login {
+        display: flex; /* 讓內部內容置中 */
+        justify-content: center;
+        align-items: center;
+    }
+
+    p-grey {
+        font-size: 12px;
+        color: #C7C7C7;
+    }
+
+    p-semitransparent {
+        font-size: 20px;
+        color: #FFFFFF;
+        opacity: 0.6
+        ;
+    }
+
+    p-white {
+        font-size: 20px;
+        color: #FFFFFF;
+        font-weight: 600;
+    }
+
+    #loginBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f0f0f0;
+        border: none;
+        border-radius: 40px;
+        padding: 12px 20px;
+        cursor: pointer;
+        font-size: 20px;
+        color: #1ED760;
+        font-weight: 600;
+        gap: 10px;
+        font-family: 'Instrument Sans'
+    }
+
+    #loginBtn img{
+        width: 36px;
+    }
+
+    /* Page 2 的排版 */
+    .inner-container2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(
+            30deg,
+            #85BBC4, 
+            #DDB1CE, 
+            #E2C7D7);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 20px 0; /* 避免貼太近 */
+    }
+
+    .white-logo {
+        position: absolute; /* 讓 Logo 固定在左上角 */
+        top: 40px; 
+        left: 40px;
+    }
+
+    .playlist_content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+        color: #FFFFFF;
+        font-size: 20px;
+        gap: 16px;
+        font-family: 'Instrument Sans';
+    }
+
+    .insert_done {
+        display: flex;
+        flex-direction: row;
+        gap: 16px
+    }
+
+    .right_arrow_Btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f0f0f0;
+        border: none;
+        border-radius: 40px;
+        padding: 12px 20px;
+        cursor: pointer;
+        font-size: 20px;
+        color: #585858;
+        font-weight: 600;
+        gap: 10px;
+        font-family: 'Instrument Sans';
+    }
+
+
+    .right_arrow_Btn img{
+        width: 36px
+    }
+
+    .input_playlist {
+        border-radius: 40px;
+        padding: 12px;
+        background: none;
+        font-size: 20px;
+        font-family: 'Instrument Sans';
+        opacity: 0.5;
+        border: 2px solid rgb(255, 255, 255);
+        outline: none;
+        width: clamp(500px, 90%, 1000px);
+    }
+
+    .input_playlist::placeholder {
+        color: #ffffff;
+        font-family: 'Instrument Sans'
+    }
+
+
+
+    /* Page 3 的排版 */
+    .inner-container3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(
+            30deg,
+            #85BBC4, 
+            #DDB1CE, 
+            #E2C7D7);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 20px 0; /* 避免貼太近 */
+        gap: 16px;
+    }
+
+    .back-and-start {
+        display: flex;
+        flex-direction: row;
+        padding-top: 20px;
+        gap: 48px;
+    }
+
+    .left_arrow_Btn {
+        display: flex;
+        align-items: center;
+        background: none;
+        border: 1px solid #f0f0f0;  /* 半透明白色邊框 */
+        border-radius: 40px;
+        padding: 12px 12px;
+        cursor: pointer;
+        color: #F0F0F0;
+        font-weight: 600;
+        gap: 8px;
+        font-size: 20px;
+        font-family: 'Instrument Sans';
+    }
+
+    .left_arrow_Btn img{
+        width: 36px;
+    }
+
+
+    /* Page 4 的排版 */
+    .inner-container4 {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch; 
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(
+            30deg,
+            #85BBC4, 
+            #DDB1CE, 
+            #E2C7D7);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    .white-rec {
+        flex: 1;
+        margin: 40px 40px 0px 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #FFFFFF;
+        border-radius: 40px 40px 0 0;
+        box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+        height: 100vh;
+        position: relative;
+        padding-top: 50px;
+    }
+
+    .playlist-Btn {
+        display: flex;
+        align-items: center;
+        background: none;
+        border: none;
+        position: absolute; /* 讓 Logo 固定在左上角 */
+        top: 40px; 
+        left: 40px;
+        cursor: pointer;
+        color: #c7c7c7;
+        font-weight: 600;
+        gap: 10px;
+        font-size: 20px;
+        font-family: 'Instrument Sans';
+    }
+    
+    .playlist-Btn img{
+        width: 30px;
+    }
+
+    .PlayForSecs {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        position: relative;
+        width: 80%;
+
+    }
+
+    p-PlayFor {
+        font-weight: 600;
+        font-size: 20px;
+        color: #585858;
+    }
+
+    .secs {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 60px;
+    }
+
+    .secs-Btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f0f0f0;
+        border: none;
+        border-radius: 40px;
+        padding: 12px 20px;
+        cursor: pointer;
+        font-size: 20px;
+        color: #585858;
+        font-weight: 600;
+        gap: 10px;
+        font-family: 'Instrument Sans';
+        height: 60px;
+        width: clamp(80px, 20%, 150px);
+    }
+
+    .PlayFull {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(
+            30deg,
+            #85BBC4, 
+            #DDB1CE, 
+            #E2C7D7);
+        border: none;
+        border-radius: 40px;
+        padding: 12px 20px;
+        cursor: pointer;
+        color: #FFFFFF;
+        font-weight: 600;
+        gap: 10px;
+        font-size: 20px;
+        font-family: 'Instrument Sans';
+        position: absolute;
+        bottom: 40px;
+        height: 60px;
+        width: clamp(272px, 60%, 482px);
+    }
+
+
+
+    /* Page 5 的排版 */
+    .inner-container5 {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch; 
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(
+            30deg,
+            #85BBC4, 
+            #DDB1CE, 
+            #E2C7D7);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    .spotifyPlayer {
+        width: clamp(0px, 60%, 1000px);
+        height: clamp(300px, 60%, 500px);
+    }
+
+
+    .nextSong_Btn {
+        display: flex;
+        align-items: center;
+        background: #f0f0f0;
+        border: none;
+        border-radius: 40px;
+        padding: 12px 20px;
+        cursor: pointer;
+        font-size: 20px;
+        color: #585858;
+        font-weight: 600;
+        gap: 10px;
+        font-family: 'Instrument Sans';
+        position: absolute;
+        bottom: 40px;
+    }
+
+    .nextSong_Btn img{
+        width: 36px;
+    }
+}
+
+/* 手機版 */
+
+@media screen and (max-width: 767px) {
+    .inner-container1 {
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        box-sizing: border-box; /* 確保 padding 不影響總寬度 */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .index-logo {
+        flex: 7;
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+        padding-top: 150px;
+    }
+
+    .index-logo img{
+        width: clamp(200px, 70%, 250px);
+    }
+
+
+    .login {
+        flex: 3;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .index-logo, .login {
+        display: flex; /* 讓內部內容置中 */
+        justify-content: center;
+        align-items: center;
+    }
+
+    p-grey {
+        font-size: 16px;
+        color: #C7C7C7;
+    }
+
+    p-semitransparent {
+        font-size: 16px;
+        color: #FFFFFF;
+        opacity: 0.6
+        ;
+    }
+
+    p-white {
+        font-size: 20px;
+        color: #FFFFFF;
+        font-weight: 600;
+    }
+
+    #loginBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f0f0f0;
+        border: none;
+        border-radius: 40px;
+        padding: 12px 12px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #1ED760;
+        font-weight: 600;
+        gap: 8px;
+        font-family: 'Instrument Sans'
+    }
+    
+
+    #loginBtn img{
+        width: 30px;
+    }
+
+
+    /* Page 2 的排版 */
+    .inner-container2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(
+            30deg,
+            #85BBC4, 
+            #DDB1CE, 
+            #E2C7D7);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 20px 0; /* 避免貼太近 */
+    }
+
+    .white-logo {
+        position: absolute;
+        justify-content: center;
+        justify-self: center;
+        top: 40px; 
+    }
+
+    .playlist_content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        font-size: 16px;
+        gap: 16px;
+        font-family: 'Instrument Sans';
+        width: 80vw;
+    }
+
+    .insert_done {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 50px
+    }
+
+    .right_arrow_Btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f0f0f0;
+        border: none;
+        border-radius: 40px;
+        padding: 12px 12px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #585858;
+        font-weight: 600;
+        gap: 8px;
+        font-family: 'Instrument Sans'
+    }
+
+    .right_arrow_Btn img{
+        width: 30px
+    }
+
+    .input_playlist {
+        border-radius: 40px;
+        padding: 12px;
+        background: none;
+        font-size: 16px;
+        font-family: 'Instrument Sans';
+        opacity: 0.5;
+        border: 2px solid rgb(255, 255, 255);
+        outline: none;
+    }
+
+    .input_playlist::placeholder {
+        color: #ffffff;
+        font-family: 'Instrument Sans'
+    }
+
+
+    /* Page 3 的排版 */
+    .inner-container3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(
+            30deg,
+            #85BBC4, 
+            #DDB1CE, 
+            #E2C7D7);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 20px 0; /* 避免貼太近 */
+        gap: 16px;
+    }
+
+    .back-and-start {
+        display: flex;
+        flex-direction: row;
+        padding-top: 20px;
+        gap: 24px;
+    }
+
+    .left_arrow_Btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: 1px solid #f0f0f0;  /* 半透明白色邊框 */
+        border-radius: 40px;
+        padding: 12px 12px;
+        cursor: pointer;
+        color: #F0F0F0;
+        font-weight: 600;
+        gap: 10px;
+        font-size: 16px;
+        font-family: 'Instrument Sans';
+    }
+
+
+    
+    .left_arrow_Btn img{
+        width: 30px;
+    }
+    
+    /* Page 4 的排版 */
+    .inner-container4 {
+        display: grid;
+        grid-template-rows: auto;
+        align-items: center; 
+        justify-content: stretch;
+        text-align: center;
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(
+            30deg,
+            #85BBC4, 
+            #DDB1CE, 
+            #E2C7D7);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    .white-rec {
+        flex: 1;
+        margin: 180px 0px 0px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: #FFFFFF;
+        border-radius: 40px 40px 0 0;
+        box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+        height: 75vh;
+        position: relative;
+        padding-top: 50px;
+    }
+
+    .playlist-Btn {
+        display: flex;
+        align-items: center;
+        background: none;
+        border: none;
+        position: absolute; /* 讓 Logo 固定在左上角 */
+        top: 30px; 
+        left: 30px;
+        cursor: pointer;
+        color: #c7c7c7;
+        font-weight: 600;
+        gap: 10px;
+        font-size: 16px;
+        font-family: 'Instrument Sans';
+    }
+
+    .playlist-Btn img{
+        width: 36px;
+    }
+
+    .PlayForSecs {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        position: relative;
+        top: 100px;
+        width: 80%;
+        padding-bottom: 60px;
+    }
+
+    p-PlayFor {
+        font-weight: 600;
+        font-size: 16px;
+        color: #585858;
+    }
+
+    .secs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 60px;
+    }
+
+    .secs-Btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f0f0f0;
+        border: none;
+        border-radius: 40px;
+        padding: 12px 12px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #585858;
+        font-weight: 600;
+        gap: 10px;
+        font-family: 'Instrument Sans';
+        height: 54px;
+        width: 150px;
+    }
+
+    .PlayFull {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(
+            30deg,
+            #85BBC4, 
+            #DDB1CE, 
+            #E2C7D7);
+        border: none;
+        border-radius: 40px;
+        padding: 12px 12x;
+        cursor: pointer;
+        color: #FFFFFF;
+        font-weight: 600;
+        gap: 10px;
+        font-size: 16px;
+        font-family: 'Instrument Sans';
+        position: absolute;
+        bottom: 100px;
+        height: 54px;
+        width: clamp(272px, 60%, 482px);
+    }
+
+
+
+    /* Page 5 的排版 */
+    .inner-container5 {
+        display: grid;
+        grid-template-rows: auto;
+        align-items: center; 
+        justify-content: stretch;
+        text-align: center;
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(
+            30deg,
+            #85BBC4, 
+            #DDB1CE, 
+            #E2C7D7);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    .spotifyPlayer {
+        width: 280px;
+        height: 400px;
+        position: relative;
+        top: 50px;
+    }
+
+
+    .nextSong_Btn {
+        display: flex;
+        align-items: center;
+        background: #f0f0f0;
+        border: none;
+        border-radius: 40px;
+        padding: 12px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #585858;
+        font-weight: 600;
+        gap: 10px;
+        font-family: 'Instrument Sans';
+        position: absolute;
+        bottom: 100px;
+        height: 54px;
+    }
+    
+    .nextSong_Btn img{
+        width: 30px;
+    }
+}

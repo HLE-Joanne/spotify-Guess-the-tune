@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Tune</title>
+    <link rel="stylesheet" href="style.css"> 
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+</head>
+<body>
+    <!-- 第 1 頁：登入 Spotify -->
+    <section id="page1" class="page active">
+        <div class="inner-container1">
+            <div class="index-logo">
+                <img src="https://raw.githubusercontent.com/HLE-Joanne/spotify-song-guesser/refs/heads/main/photos/Guess%20the%20tune_logo.svg" 
+                    alt="Guess The Tune">
+                <p-grey>by HLE-Joanne</p-grey>
+            </div>
+            <div class="login">
+                <button id="loginBtn" class="loginBtn">
+                    <img src="https://raw.githubusercontent.com/HLE-Joanne/spotify-song-guesser/refs/heads/main/photos/Spotify_logo.svg" 
+                    alt="Spotify">
+                    Login
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第 2 頁：輸入歌單 -->
+    <section id="page2" class="page">
+        <div class="inner-container2">
+            <div class="white-logo">
+                <a href="https://www.google.com/">
+                    <img src="https://raw.githubusercontent.com/HLE-Joanne/spotify-Guess-the-tune/refs/heads/main/photos/Guess%20the%20tune_logo%20white.svg"
+                        width="100">
+                </a>
+            </div>
+            <div class="playlist_content">
+                Pick songs randomly from the album or playlist (url):
+                <div class="insert_done">
+                    <input type="text" id="playlistUrl" placeholder="Insert the album or playlist URL here" class="input_playlist">
+                    <button id="doneBtn" class="right_arrow_Btn">
+                        Done
+                        <img src="https://raw.githubusercontent.com/HLE-Joanne/spotify-Guess-the-tune/refs/heads/main/photos/Right_arrow.svg">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第 3 頁：顯示歌單名稱 -->
+    <section id="page3" class="page">
+        <div class="inner-container3">
+            <div class="white-logo">
+                <a href="https://www.google.com/">
+                    <img src="https://raw.githubusercontent.com/HLE-Joanne/spotify-Guess-the-tune/refs/heads/main/photos/Guess%20the%20tune_logo%20white.svg"
+                        width="100">
+                </a>
+            </div>
+            <p-semitransparent>Playlist</p-semitransparent>
+            <p-white id="playlistName">Playlist Name</p-white>
+            <div class="back-and-start">
+                <button onclick="showPage(2)" class="left_arrow_Btn">
+                    <img src="https://raw.githubusercontent.com/HLE-Joanne/spotify-Guess-the-tune/refs/heads/main/photos/Left_arrow_F0F0F0.svg" >
+                    Back
+                </button>
+                <button id="startBtn" class="right_arrow_Btn">
+                    Start
+                    <img src="https://raw.githubusercontent.com/HLE-Joanne/spotify-Guess-the-tune/refs/heads/main/photos/Right_arrow.svg" >
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第 4 頁：播放歌曲-->
+    <section id="page4" class="page">
+        <div class="inner-container4">
+            <div class="white-logo">
+                <a href="https://www.google.com/">
+                    <img src="https://raw.githubusercontent.com/HLE-Joanne/spotify-Guess-the-tune/refs/heads/main/photos/Guess%20the%20tune_logo%20white.svg"
+                        width="100">
+                </a>
+            </div>
+            <div class="white-rec">
+                <button onclick="showPage(2)" class="playlist-Btn">
+                    <img src="https://raw.githubusercontent.com/HLE-Joanne/spotify-Guess-the-tune/refs/heads/main/photos/Left_arrow_C7C7C7.svg" >
+                    Playlist
+                </button>
+                <div class="PlayForSecs">
+                    <p-PlayFor>Play for:</p-PlayFor>
+                    <div class="secs">
+                        <button id="play3Secs" class="secs-Btn">3 secs</button>
+                        <button id="play5Secs" class="secs-Btn">5 secs</button>
+                        <button id="play10Secs" class="secs-Btn">10 secs</button>
+                    </div>
+                </div>
+                <button id="playFull" class="PlayFull">Play full and show the answer</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第 5 頁：顯示答案-->
+    <section id="page5" class="page">
+        <div class="inner-container5">
+            <div class="white-logo">
+                <a href="https://www.google.com/">
+                    <img src="https://raw.githubusercontent.com/HLE-Joanne/spotify-Guess-the-tune/refs/heads/main/photos/Guess%20the%20tune_logo%20white.svg"
+                        width="100">
+                </a>
+            </div>
+            <div class="white-rec">
+                <button onclick="showPage(2)" class="playlist-Btn">
+                    <img src="https://raw.githubusercontent.com/HLE-Joanne/spotify-Guess-the-tune/refs/heads/main/photos/Left_arrow_C7C7C7.svg" >
+                    Playlist
+                </button>
+                <iframe id="spotifyPlayer" class="spotifyPlayer" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                <button id="nextSong" class="nextSong_Btn">
+                    Next Song
+                    <img src="https://raw.githubusercontent.com/HLE-Joanne/spotify-Guess-the-tune/refs/heads/main/photos/Right_arrow.svg">
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
