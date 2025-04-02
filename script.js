@@ -47,7 +47,7 @@ function showPage(pageNumber) {
 // 2️⃣ Spotify PKCE 登入流程
 // =============================
 const clientId = "176b6fff462242a595c317cbb814c4f4";
-const redirectUri = "http://localhost:5500";
+const redirectUri = "https://hle-joanne.github.io/";
 let codeVerifier = "";
 
 async function generateCodeChallenge(codeVerifier) {
