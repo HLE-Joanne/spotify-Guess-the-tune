@@ -32,8 +32,10 @@ function showPage(pageNumber) {
         targetPage.classList.add("active");
 
         let newUrl = Object.keys(routes).find(key => routes[key] === pageNumber) || "";
-        
-        // **只在使用者手動切換頁面時，更新歷史紀錄**
+
+        // ✅ 修正這裡，確保 URL 以完整專案路徑開始
+        newUrl = `/spotify-Guess-the-tune${newUrl}`;
+
         if (!history.state || history.state.page !== pageNumber) {
             window.history.pushState({ page: pageNumber }, "", newUrl);
         }
@@ -41,7 +43,6 @@ function showPage(pageNumber) {
         localStorage.setItem("currentPage", pageNumber);
     }
 }
-
 
 // =============================
 // 2️⃣ Spotify PKCE 登入流程
