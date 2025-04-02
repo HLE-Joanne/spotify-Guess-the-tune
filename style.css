@@ -54,6 +54,7 @@ body {
 
     .login {
         flex: 3;
+        padding-bottom: 50px;
     }
 
     .index-logo, .login {
